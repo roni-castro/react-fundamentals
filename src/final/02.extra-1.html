@@ -11,9 +11,9 @@
     const element = React.createElement('div', {
       className: 'container',
       children: [
-        React.createElement('span', null, 'Hello'),
+        React.createElement('span', {key: 'hello'}, 'Hello'),
         ' ',
-        React.createElement('span', null, 'World'),
+        React.createElement('span', {key: 'world'}, 'World'),
       ],
     })
     ReactDOM.render(element, rootElement)
