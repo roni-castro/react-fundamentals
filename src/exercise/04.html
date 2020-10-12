@@ -6,24 +6,8 @@
   <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script type="text/babel">
-    const PropTypes = {
-      required(props, propName, componentName) {
-        if (typeof props[propName] === 'undefined') {
-          return new Error(`Props ${propName} is required`)
-        }
-      },
-      string(props, propName, componentName) {
-        if (typeof props[propName] !== 'string') {
-          return new Error(
-            `The type of the props ${propName} must be a string and was received a ${typeof props[
-              propName
-            ]}`,
-          )
-        }
-      },
-    }
-
     function Message({subject, greeting}) {
       return (
         <div className="message">
@@ -33,8 +17,8 @@
     }
 
     Message.propTypes = {
-      subject: PropTypes.string,
-      greeting: PropTypes.string,
+      subject: PropTypes.string.isRequired,
+      greeting: PropTypes.string.isRequired,
     }
 
     const element = (
