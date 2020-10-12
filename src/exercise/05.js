@@ -14,7 +14,7 @@ const Box = ({style, size = '', className, ...otherProps}) => {
   return (
     <div
       className={className || `box ${BoxSizes[size]}`}
-      style={{...style, fontStyle: 'italic'}}
+      style={{fontStyle: 'italic', ...style}}
       {...otherProps}
     />
   )
