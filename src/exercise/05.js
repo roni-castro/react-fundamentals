@@ -10,10 +10,10 @@ const BoxSizes = {
   large: 'box--large',
 }
 
-const Box = ({style, size = '', className, ...otherProps}) => {
+const Box = ({style, size = '', className = '', ...otherProps}) => {
   return (
     <div
-      className={className || `box ${BoxSizes[size]}`}
+      className={(className + ` box ${BoxSizes[size]}`).trim()}
       style={{fontStyle: 'italic', ...style}}
       {...otherProps}
     />
