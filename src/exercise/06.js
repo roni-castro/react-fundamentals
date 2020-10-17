@@ -4,7 +4,7 @@
 import React, {useState} from 'react'
 
 function UsernameForm({onSubmitUsername}) {
-  const [userName, setUserName] = useState()
+  const [userName, setUserName] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -20,7 +20,7 @@ function UsernameForm({onSubmitUsername}) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="usernameId">Username:</label>
         <input
           id="usernameId"
           type="text"
